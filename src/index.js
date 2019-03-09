@@ -30,7 +30,7 @@ const { PORT, DB_HOST, DB_NAME, DB_USER, DB_PASSWORD } = process.env;
 
     app.use(errorHandler);
 
-    app.listen({ port: APP_PORT }, () =>
+    app.listen({ port: PORT }, () =>
       console.log(`Server ready at http://localhost:${PORT}`)
     );
   } catch (e) {
