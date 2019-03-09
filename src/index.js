@@ -10,7 +10,14 @@ import errorHandler from "./errorHandler";
 
 dotenv.config();
 
-const { PORT, DB_HOST, DB_NAME, DB_USER, DB_PASSWORD } = process.env;
+const {
+  PORT,
+  CLIENT_URL,
+  DB_HOST,
+  DB_NAME,
+  DB_USER,
+  DB_PASSWORD
+} = process.env;
 
 (async () => {
   try {
@@ -22,7 +29,7 @@ const { PORT, DB_HOST, DB_NAME, DB_USER, DB_PASSWORD } = process.env;
 
     const app = express();
     app.disable("x-powered-by");
-    app.use(cors({ credentials: true }));
+    app.use(cors({ origin: CLIENT_URL, credentials: true }));
     app.use(bodyParser.json());
 
     configureAuth(app);

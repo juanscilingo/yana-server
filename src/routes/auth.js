@@ -30,7 +30,11 @@ authRouter.post("/signin", guest, async (req, res, next) => {
       // if (err) return res.status(401).json(err);
       if (err) return next(err);
 
-      return res.sendStatus(200);
+      return res.status(200).json({
+        email: user.email,
+        name: user.name,
+        avatar: user.avatar
+      });
     });
   })(req, res);
 });
