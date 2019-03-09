@@ -8,7 +8,7 @@
   "scripts": {
     "start": "backpack",
     "build": "backpack build",
-    "prod": "node ./build/main.js",
+    "prod": "node build/main.js",
     "heroku-postbuild": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
