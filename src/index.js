@@ -10,7 +10,7 @@ import errorHandler from "./errorHandler";
 
 dotenv.config();
 
-const { APP_PORT, DB_HOST, DB_NAME, DB_USER, DB_PASSWORD } = process.env;
+const { PORT, DB_HOST, DB_NAME, DB_USER, DB_PASSWORD } = process.env;
 
 (async () => {
   try {
@@ -31,7 +31,7 @@ const { APP_PORT, DB_HOST, DB_NAME, DB_USER, DB_PASSWORD } = process.env;
     app.use(errorHandler);
 
     app.listen({ port: APP_PORT }, () =>
-      console.log(`Server ready at http://localhost:${APP_PORT}`)
+      console.log(`Server ready at http://localhost:${PORT}`)
     );
   } catch (e) {
     console.error(e);
