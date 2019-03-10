@@ -14,7 +14,11 @@ authRouter.post("/signup", guest, async (req, res, next) => {
   req.login(user, err => {
     if (err) next(err);
 
-    return res.status(200).json(user);
+    return res.status(200).json({
+      email: user.email,
+      name: user.name,
+      avatar: user.avatar
+    });
   });
 });
 
