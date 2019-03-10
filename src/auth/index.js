@@ -27,7 +27,7 @@ export default app => {
       saveUninitialized: false,
       cookie: {
         maxAge: parseInt(SESSION_LIFETIME),
-        sameSite: true,
+        sameSite: false,
         secure: IN_PROD
       }
     })
