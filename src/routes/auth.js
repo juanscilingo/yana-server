@@ -46,6 +46,7 @@ authRouter.post("/signin", guest, async (req, res, next) => {
 authRouter.post("/signout", auth, async (req, res) => {
   req.session.destroy();
   req.logout();
+  res.clearCookie(SESSION_NAME);
   return res.sendStatus(200);
 });
 
