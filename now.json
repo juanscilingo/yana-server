@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "yana-server",
+  "builds": [
+    {
+      "src": "./build/main.js",
+      "use": "@now/node-server"
+    }
+  ]
+}
