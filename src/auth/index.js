@@ -48,12 +48,12 @@ export default app => {
   );
 
   passport.serializeUser(function(user, done) {
-    done(null, { id: user.id });
+    done(null, user.id);
   });
 
   passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, { email, name, avatar, id }) {
-      done(err, { email, name, avatar, id });
+    User.findById(id, function(err, user) {
+      done(err, user);
     });
   });
 

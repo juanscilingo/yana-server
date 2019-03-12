@@ -4,7 +4,7 @@ import { auth } from "../auth";
 
 const notebookRouter = Router();
 
-notebookRouter.post("/create", async (req, res) => {
+notebookRouter.post("/", async (req, res) => {
   // Validate with joi
   const notebook = await Notebook.create({ ...req.body, author: req.user.id });
   return res.status(200).json(notebook);
