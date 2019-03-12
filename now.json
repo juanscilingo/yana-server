@@ -3,7 +3,7 @@
   "name": "yana-server",
   "builds": [
     {
-      "src": "build/main.js",
+      "src": "src/index.js",
       "use": "@now/node-server"
     }
   ]
