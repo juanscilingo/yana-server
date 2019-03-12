@@ -3,8 +3,13 @@
   "name": "yana-server",
   "builds": [
     {
-      "src": "src/index.js",
-      "use": "@now/node-server"
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    },
+    {
+      "src": "build/main.js",
+      "use": "@now/node"
     }
   ]
 }
